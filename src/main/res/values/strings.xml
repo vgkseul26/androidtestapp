@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidTestApp</string>
+    <string name="posts">Posts</string>
+    <string name="empty_folder">Empty folder</string>
+    <string-array name="drawer_array">
+        <item>RecyclerView</item>
+        <item>Network info</item>
+        <item>Change theme</item>
+    </string-array>
+</resources>

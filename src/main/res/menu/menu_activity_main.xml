@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/posts"
+        android:title="@string/posts"
+        android:icon="@drawable/droid"
+        android:layout_height="@dimen/activity_horizontal_margin"
+        yourapp:showAsAction="always|collapseActionView"/>
+    <item
+        android:id="@+id/empty_folder"
+        android:title="@string/empty_folder"
+        android:icon="@drawable/folder"
+        yourapp:showAsAction="always" />
+</menu>
