@@ -1,19 +1,21 @@
 package com.usv.androidtestapp.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.usv.androidtestapp.model.Utils;
 
-public class NetworkActivity extends Activity {
+public class NetworkActivity extends BaseActivity {
 
+    public Toolbar toolbar;
     public TextView connectionOne;
     public TextView connectionTwo;
     public TextView connectionThree;
@@ -24,7 +26,14 @@ public class NetworkActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Utils.onActivityCreateSetTheme(this);
-        setContentView(R.layout.activity_network);
+
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activity_network, null, false);
+        drawerLayout.addView(contentView, 0);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(drowerNames[1]);
+        setSupportActionBar(toolbar);
 
         reloadButton = (Button) findViewById(R.id.reload_button);
         connectionOne = (TextView) findViewById(R.id.t1_1);

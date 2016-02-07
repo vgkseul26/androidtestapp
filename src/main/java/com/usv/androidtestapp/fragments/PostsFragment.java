@@ -28,7 +28,6 @@ public class PostsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View postFragment = inflater.inflate(R.layout.fragment_posts, container, false);
 
-
         RecyclerView recyclerView = (RecyclerView) postFragment.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

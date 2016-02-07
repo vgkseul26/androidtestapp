@@ -1,49 +1,36 @@
 package com.usv.androidtestapp.activity;
 
 import android.app.FragmentTransaction;
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.usv.androidtestapp.fragments.EmptyFragment;
 import com.usv.androidtestapp.fragments.PostsFragment;
 import com.usv.androidtestapp.model.Utils;
 
-public class MainActivity extends AppCompatActivity {
-    public DrawerLayout drawerLayout;
-    public ListView drawerList;
-    public String[] drowerNames;
-    private CharSequence drawerTitle;
-    private CharSequence title;
-    public PostsFragment postsFragment;
-    public EmptyFragment emptyFragment;
-    public Toolbar toolbar;
+public class MainActivity extends BaseActivity {
+    private PostsFragment postsFragment;
+    private EmptyFragment emptyFragment;
+    protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Utils.onActivityCreateSetTheme(this);
-        setContentView(R.layout.activity_main);
 
-        drowerNames = getResources().getStringArray(R.array.drawer_array);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawerList = (ListView) findViewById(R.id.left_drawer);
-        drawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, drowerNames));
-        drawerList.setOnItemClickListener(new DrawerItemClickListener());
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activity_main, null, false);
+        drawerLayout.addView(contentView, 0);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            toolbar.setTitle(R.string.app_name);
-            setSupportActionBar(toolbar);
-        }
+        toolbar.setTitle(drowerNames[0]);
+        setSupportActionBar(toolbar);
+
         postsFragment = new PostsFragment();
         emptyFragment = new EmptyFragment();
     }
@@ -73,37 +60,5 @@ public class MainActivity extends AppCompatActivity {
         }
         fragTrans.commit();
         return true;
-    }
-
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView parent, View view, int position, long id) {
-            selectItem(position);
-        }
-    }
-
-    private void selectItem(int position) {
-        switch (position) {
-            case 0:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-            case 1:
-                startActivity(new Intent(this, NetworkActivity.class));
-                break;
-            case 2:
-                startActivity(new Intent(this, ThemeActivity.class));
-                break;
-            default:
-                break;
-        }
-        drawerList.setItemChecked(position, true);
-        setTitle(drowerNames[position]);
-        drawerLayout.closeDrawer(drawerList);
-    }
-
-    @Override
-    public void setTitle(CharSequence title) {
-        this.title = title;
-        toolbar.setTitle(title);
     }
 }
