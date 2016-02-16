@@ -44,16 +44,12 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         FragmentTransaction fragTrans = getFragmentManager().beginTransaction();
-        fragTrans.add(R.id.frame, postsFragment);
-        fragTrans.add(R.id.frame, emptyFragment);
         switch(item.getItemId()) {
             case R.id.posts:
-                fragTrans.hide(emptyFragment);
-                fragTrans.show(postsFragment);
+                fragTrans.replace(R.id.frame, postsFragment);
                 break;
             case R.id.empty_folder:
-                fragTrans.hide(postsFragment);
-                fragTrans.show(emptyFragment);
+                fragTrans.replace(R.id.frame, emptyFragment);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
