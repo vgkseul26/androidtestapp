@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.usv.androidtestapp.R;
+
 public class BaseActivity extends AppCompatActivity {
 
     protected DrawerLayout drawerLayout;

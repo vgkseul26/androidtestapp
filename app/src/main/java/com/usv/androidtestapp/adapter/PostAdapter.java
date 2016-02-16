@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.usv.androidtestapp.activity.R;
+import com.usv.androidtestapp.R;
 import com.usv.androidtestapp.model.Record;
 
 import java.util.List;

@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.usv.androidtestapp.activity.InsertActivity;
-import com.usv.androidtestapp.activity.R;
+import com.usv.androidtestapp.R;
 import com.usv.androidtestapp.adapter.PostAdapter;
 import com.usv.androidtestapp.model.Record;
 
