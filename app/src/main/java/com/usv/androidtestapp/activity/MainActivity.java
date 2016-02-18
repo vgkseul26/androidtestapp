@@ -12,7 +12,6 @@ import android.view.View;
 import com.usv.androidtestapp.fragments.EmptyFragment;
 import com.usv.androidtestapp.fragments.PostsFragment;
 import com.usv.androidtestapp.model.Utils;
-import com.usv.androidtestapp.R;
 
 public class MainActivity extends BaseActivity {
     private PostsFragment postsFragment;

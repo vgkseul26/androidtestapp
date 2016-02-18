@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 import com.usv.androidtestapp.model.Utils;
-import com.usv.androidtestapp.R;
+import com.usv.androidtestapp.activity.R;
 
 public class ThemeActivity extends BaseActivity {
 

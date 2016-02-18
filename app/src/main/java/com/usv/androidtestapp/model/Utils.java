@@ -7,7 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 
-import com.usv.androidtestapp.R;
+import com.usv.androidtestapp.activity.R;
 
 public class Utils
 {

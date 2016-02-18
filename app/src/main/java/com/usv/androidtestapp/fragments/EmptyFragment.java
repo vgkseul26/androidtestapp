@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.usv.androidtestapp.R;
+import com.usv.androidtestapp.activity.R;
 
 public class EmptyFragment extends Fragment {
 

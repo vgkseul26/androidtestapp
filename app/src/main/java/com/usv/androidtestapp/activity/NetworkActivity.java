@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.usv.androidtestapp.R;
 import com.usv.androidtestapp.model.Utils;
 
 public class NetworkActivity extends BaseActivity {
